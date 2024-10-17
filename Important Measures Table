@@ -1,0 +1,13 @@
+After the Datasets are Loaded into the PowerBI
+A new Table should be Created and named as Important Measures Table.
+Some of the new measures must be added into the Important Measures Table.
+1. Total Sales = SUM(Orders[Quantity]) * SUM(Orders[Unit Price])
+2. Profit = SUM(Orders[Profit])
+3. Profit Ratio = DIVIDE([Profit],[Total Sales],0)
+4. Report as of Date = "Report As of Date:" & MAX(Orders[Order Date])
+
+The Total Sales measure must be Updated to:
+Total Sales = SUMX(Orders, Orders[Unit Price] * Orders[Quantity])
+
+
+
